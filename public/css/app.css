@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,900&family=Staatliches&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: 'Playfair Display SC', serif;
+  text-align: center;
+  height: 100vh;
+  color: ghostwhite;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 10px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+a:hover {
+  color: ghostwhite;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  color: blue;
+}
+
+input[type=text] {
+  padding: .3em;
+}
+
+input[type=submit] {
+  padding: .3em;
+  color: red;
+  background: ghostwhite;
+  font-size: 1em;
+  font-family: 'Playfair Display SC', serif;
+  border-radius: 10%;
+}
+
+.Testform{
+ border: solid red;
+}

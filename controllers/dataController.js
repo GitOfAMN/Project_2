@@ -1,5 +1,5 @@
-const { update } = require('../models/nft')
-const Nft = require('../models/nft')
+const { update } = require('../models/bid')
+const Nft = require('../models/bid')
 
 const dataController = {
     //Index,

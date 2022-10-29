@@ -1,11 +1,10 @@
 const React = require('react')
 const Default = require('../layouts/Default')
 
-
 class Login extends React.Component {
   render () {
     return (
-      <Default title="Login">
+      <Default title='Login'>
         <form action='/user/login' method='POST'>
           <fieldset>
             <legend>New User</legend>

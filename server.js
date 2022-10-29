@@ -1,49 +1,43 @@
-require('dotenv').config() //this lets you read the dotenv file and makes it that we can use it in the rest of the file
+require('dotenv').config() // this lets you read the dotenv file and makes it that we can use it in the rest of the file
 // Require modules
-const fs = require('fs') // this engine requires the fs module like we did Saturday
 const express = require('express')
-const mongoose = require('mongoose')
+const db = require('./models/db')
 const methodOverride = require('method-override')
-
 
 // Create our express app
 const app = express()
 
 // Configure the app (app.set)
-/*Start Config */
+/* Start Config */
 app.use(express.urlencoded({ extended: true }))
 app.use((req, res, next) => {
-  res.locals.data = {}
-  next()
+    res.locals.data = {}
+    next()
 })
 app.engine('jsx', require('jsx-view-engine').createEngine())
 app.set('view engine', 'jsx') // register the jsx view engine
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connection.once('open', () => {
-  console.log('connected to MongoDB Atlas')
+db.on('open', () => {
+    console.log('database connected')
 })
-
 
 /* END CONFIG */
 
 // Mount our middleware (app.use)
 
-/*Start Middleware */
+/* Start Middleware */
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use('/nfts', require('./controllers/routeController'))
+app.use('/user', require('./controllers/authController'))
 /* END Middleware */
 
-
-//////***** This is the code from class week 12 day 2 *****\\\\\\
-
+/// ///***** This is the code from class week 12 day 2 *****\\\\\\
 
 // Mount Routes
 
-
-/*Start Routes */
+/* Start Routes */
 
 // Tell the app to listen on a port
 app.listen(3000, () => {
-  console.log('Listening on Port 3000')
+    console.log('Listening on Port 3000')
 })

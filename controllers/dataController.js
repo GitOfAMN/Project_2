@@ -9,7 +9,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.nft = foundNft
+        res.locals.data.nfts = foundNft
         next()
       }
     })

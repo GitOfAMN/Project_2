@@ -9,6 +9,14 @@ body {
   color: ghostwhite;
 }
 
+h1 {
+    font-family: 'Cormorant', serif;
+}
+
+h2 {
+    font-family: 'Playfair Display SC', serif;
+}
+
 a {
   color: red;
   text-decoration: none;
@@ -29,24 +37,23 @@ li {
 }
 
 li a {
-  color: blue;
+  color: red;
 }
 
 input[type=text] {
   padding: .3em;
 }
 
-input[type=submit] {
+/* input[type=submit] {
   padding: .3em;
   color: red;
   background: ghostwhite;
   font-size: 1em;
   font-family: 'Playfair Display SC', serif;
   border-radius: 10%;
-}
+} */
 
 .Testform{
- /* border: solid red; */
  display: flex;
  flex-direction: column;
  align-items: center;

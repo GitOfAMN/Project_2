@@ -2,14 +2,31 @@ const React = require('react')
 const Default = require('../layouts/Default.jsx')
 
 class Index extends React.Component {
-  render () {
-    return (
-      <Default title='Marie Auction House | Metaverse Collection'>
-        <h1>Featuring The Bored Ape Yacht Club</h1>
-        <img class='center' src='https://i.imgur.com/MvR9swe.png' alt='Bored Ape Home' />
-      </Default>
-    )
-  }
-}
+    render () {
+        const { nfts } = this.props
+        return (
+          <Default title='Bid Library'>
+            <ul>
+              {
+                            nfts.map((item) => {
+                              const { name, bid, nft, _id } = item
+                              return (
+                                <li key={_id}>
+                                  <a href={`/nfts/${_id}`}>
+                                    {name}
+                                  </a>bid {bid} on {nft}
+
+                                  <form method='POST' action={`/nfts/${_id}?_method=DELETE`}>
+                                    <input type='submit' value={`Delete ${name}`} />
+                                  </form>
+                                </li>
+                              )
+                            }).reverse()
+                        }
+            </ul>
+          </Default>
+        )
+      }
+    }
 
 module.exports = Index

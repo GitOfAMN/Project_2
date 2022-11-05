@@ -6,7 +6,7 @@ class Show extends React.Component {
         const { name, bid, nft, _id } = this.props.nft
         const capName = name[0].toUpperCase() + name.substring(1)
         return (
-            <Default title={`Bid Library`} nft={this.props.nft}>
+            <Default title={`Your Bid`} nft={this.props.nft}>
                 <p>{capName} bid {bid} Ether on {nft}</p>
                 <form method='POST' action={`/nfts/${_id}?_method=DELETE`}>
                     <input type='submit' value={`Delete Bid`} />

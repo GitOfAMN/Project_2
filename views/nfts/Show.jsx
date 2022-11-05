@@ -11,11 +11,10 @@ class Show extends React.Component {
                 <form method='POST' action={`/nfts/${_id}?_method=DELETE`}>
                     <input type='submit' value={`Delete Bid`} />
                 </form> 
-                <form method='POST' action={`/nfts/${_id}?_method=PUT`}>
+                {/* <form method='POST' action={`/nfts/${_id}Edit?_method=PUT`}>
                     <input type='submit' value={`Edit Bid`} />
-                </form>
-                {/* <a href={`/nfts/${_id}?_method=DELETE`}>Delete Bid</a>
-                <a href={`/nfts/${_id}/edit`}>Edit Bid</a> */}
+                </form> */}
+                <a href={`/nfts/${_id}/edit`}>Edit Bid</a>
             </Default>
         )
     }
